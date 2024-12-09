@@ -7,7 +7,9 @@
 [![Contributors](https://img.shields.io/github/contributors-anon/creyD/prettier_action)](https://github.com/creyD/prettier_action/graphs/contributors)
 [![Issues](https://img.shields.io/github/issues/creyD/prettier_action)](https://github.com/creyD/prettier_action/issues)
 
-A GitHub action for styling files with [prettier](https://prettier.io).
+A GitHub action for styling files with [prettier](https://prettier.io) using Yarn.
+
+This project is a fork off of [creyD/prettier_action](https://github.com/creyD/prettier_action) in order to use Yarn as the package manager during the plugin install rather than NPM.
 
 ## Usage
 
@@ -60,7 +62,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Prettify code
-        uses: creyD/prettier_action@v4.3
+        uses: Andrews-McMeel-Universal/prettier_action@v4.3.1
         with:
           # This part is also where you can pass other options, for example:
           prettier_options: --write **/*.{js,md}
@@ -89,7 +91,7 @@ jobs:
           fetch-depth: 0
 
       - name: Prettify code
-        uses: creyD/prettier_action@v4.3
+        uses: Andrews-McMeel-Universal/prettier_action@v4.3.1
         with:
           # This part is also where you can pass other options, for example:
           prettier_options: --write **/*.{js,md}
@@ -119,7 +121,7 @@ jobs:
           persist-credentials: false
 
       - name: Prettify code
-        uses: creyD/prettier_action@v4.3
+        uses: Andrews-McMeel-Universal/prettier_action@v4.3.1
         with:
           prettier_options: --write **/*.{js,md}
           only_changed: True
@@ -150,7 +152,7 @@ jobs:
           persist-credentials: false
 
       - name: Prettify code
-        uses: creyD/prettier_action@v4.3
+        uses: Andrews-McMeel-Universal/prettier_action@v4.3.1
         with:
           dry: True
           github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}

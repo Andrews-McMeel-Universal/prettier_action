@@ -1,5 +1,5 @@
-name: AMU Prettier Action
-description: Automatically runs prettier on all your changes.
+name: Yarn Prettier Action
+description: Automatically runs prettier on all your changes. Uses Yarn as the package manager.
 
 author: Ella Bronson <ella.bronson@andrewsmcmeel.com>
 

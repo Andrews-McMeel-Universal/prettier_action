@@ -45,6 +45,8 @@ case $INPUT_WORKING_DIRECTORY in
         ;;
 esac
 
+echo "Working directory: $(pwd)"
+
 case $INPUT_PRETTIER_VERSION in
     false)
         yarn add --silent prettier

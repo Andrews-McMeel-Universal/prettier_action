@@ -1,7 +1,7 @@
-name: Prettier Action
+name: AMU Prettier Action
 description: Automatically runs prettier on all your changes.
 
-author: Conrad Großer <grosserconrad@gmail.com>
+author: Ella Bronson <ella.bronson@andrewsmcmeel.com>
 
 inputs:
   commit_message:

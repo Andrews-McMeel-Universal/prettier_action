@@ -33,7 +33,7 @@ _git_changes() {
 (
 # PROGRAM
 # Changing to the directory
-cd "$GITHUB_ACTION_PATH"
+cd "$GITHUB_WORKSPACE"
 
 echo "Installing prettier..."
 

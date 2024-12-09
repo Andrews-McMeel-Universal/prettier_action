@@ -47,10 +47,10 @@ esac
 
 case $INPUT_PRETTIER_VERSION in
     false)
-        npm install --silent prettier
+        yarn add --silent prettier
         ;;
     *)
-        npm install --silent prettier@$INPUT_PRETTIER_VERSION
+        yarn add --silent prettier@$INPUT_PRETTIER_VERSION
         ;;
 esac
 
@@ -64,7 +64,7 @@ if [ -n "$INPUT_PRETTIER_PLUGINS" ]; then
             exit 1
         fi
     done
-    npm install --silent $INPUT_PRETTIER_PLUGINS
+    yarn add --silent $INPUT_PRETTIER_PLUGINS
 fi
 )
 

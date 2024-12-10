@@ -47,10 +47,10 @@ esac
 
 case $INPUT_PRETTIER_VERSION in
     false)
-        yarn add --silent prettier
+        yarn add prettier
         ;;
     *)
-        yarn add --silent prettier@$INPUT_PRETTIER_VERSION
+        yarn add prettier@$INPUT_PRETTIER_VERSION
         ;;
 esac
 
@@ -64,7 +64,7 @@ if [ -n "$INPUT_PRETTIER_PLUGINS" ]; then
             exit 1
         fi
     done
-    yarn add --silent $INPUT_PRETTIER_PLUGINS
+    yarn add $INPUT_PRETTIER_PLUGINS
 fi
 )
 

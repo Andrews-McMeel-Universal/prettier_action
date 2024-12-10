@@ -33,7 +33,7 @@ _git_changes() {
 (
 # PROGRAM
 # Changing to the directory
-cd "$GITHUB_WORKSPACE"
+cd "$GITHUB_ACTION_PATH"
 
 echo "Installing prettier..."
 
@@ -44,8 +44,6 @@ case $INPUT_WORKING_DIRECTORY in
         cd $INPUT_WORKING_DIRECTORY
         ;;
 esac
-
-echo "Working directory: $(pwd)"
 
 case $INPUT_PRETTIER_VERSION in
     false)

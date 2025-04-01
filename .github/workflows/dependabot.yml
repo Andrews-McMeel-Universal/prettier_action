@@ -19,9 +19,6 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' }}
     name: Dependabot PR Automations
     uses: Andrews-McMeel-Universal/reusable_workflows/.github/workflows/dependabot-automations.yaml@latest
-    with:
-      autoApprove: ${{ vars.DEPENDABOT_AUTOAPPROVE || '["version-update:semver-major", "version-update:semver-minor", "version-update:semver-patch"]' }}
-      autoMerge: ${{ vars.DEPENDABOT_AUTOMERGE || 'false' }}
 
   required-checks:
     name: Required Checks

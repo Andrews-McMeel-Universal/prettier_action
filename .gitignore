@@ -843,9 +843,13 @@ terraform/*.key
 
 # Ansible
 vault.yml
+inventories/group_vars/amu
 
 # Typesense
 data/db
 data/meta
 data/models
 data/state
+
+# Syndication
+public/uu_site/

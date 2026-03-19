@@ -43,16 +43,6 @@ if [ -z "$INPUT_WORKING_DIRECTORY" ] ; then
 fi
 cd "$INPUT_WORKING_DIRECTORY"
 
-# Check if yarn files exist first
-YARN_LOCK_EXISTS="false"
-PACKAGE_JSON_EXISTS="false"
-if [ -f 'yarn.lock' ]; then
-  YARN_LOCK_EXISTS="true"
-fi
-if [ -f 'package.json' ]; then
-  PACKAGE_JSON_EXISTS="true"
-fi
-
 echo "Installing prettier..."
 
 yarn add prettier@$INPUT_PRETTIER_VERSION
@@ -92,16 +82,15 @@ if $INPUT_CLEAN_NODE_FOLDER; then
 fi
 
 if [ -f 'yarn.lock' ]; then
-  git checkout -- yarn.lock || echo "No yarn.lock file tracked by git."
+  git checkout -- yarn.lock || rm yarn.lock
 else
   echo "No yarn.lock file."
 fi
 
-if [ "${PACKAGE_JSON_EXISTS}" == "false" ]; then
-  rm package.json || echo "No package.json file exists"
-fi
-if [ "${YARN_LOCK_EXISTS}" == "false" ]; then
-  rm yarn.lock || echo "No yarn.lock file exists"
+if [ -f 'package.json' ]; then
+  git checkout -- package.json || rm package.json
+else
+  echo "No package.json file."
 fi
 
 # If running under only_changed, reset every modified file that wasn't also modified in the last commit

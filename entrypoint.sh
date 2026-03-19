@@ -81,10 +81,16 @@ if $INPUT_CLEAN_NODE_FOLDER; then
   fi
 fi
 
-if [ -f 'package-lock.json' ]; then
-  git checkout -- package-lock.json || echo "No package-lock.json file tracked by git."
+if [ -f 'yarn.lock' ]; then
+  git checkout -- yarn.lock || echo "No yarn.lock file tracked by git."
 else
-  echo "No package-lock.json file."
+  echo "No yarn.lock file."
+fi
+
+if [ -f 'package.json' ]; then
+  git checkout -- package.json || echo "No package.json file tracked by git."
+else
+  echo "No package.json file."
 fi
 
 # If running under only_changed, reset every modified file that wasn't also modified in the last commit
